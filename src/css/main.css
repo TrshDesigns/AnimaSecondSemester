@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  width: 60vw;
+  height: max-content;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  font-size: 27px;
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0px 0px 20px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.467),
+    inset 0 0 8px 4px rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  padding: 60px;
+}
+
+img {
+  width: 300px;
+  height: auto;
+}
+
+.donationBtn {
+  background-color: gray;
+  padding: 10px;
+  border: 2px solid rgb(37, 37, 37);
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+  color: white;
+  margin: 10px;
+}
+
+.makeitSound{
+    background-color: rgba(74, 213, 179, 0.332);
+    border-radius:5px;
+    padding:20px;
+    font-size:16px;
+    border: 2px solid rgb(37, 37, 37);
+}
+
+.itemBrightness {
+  transition: all ease-in-out 0.3s;
+}
+.itemBrightness:hover {
+  transition: all ease-in-out 0.3s;
+  filter: brightness(1.6);  
+  cursor: grab;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+.img-wrapper {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.heart-trigger {
+  display: none;
+}
+
+.heart-emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 50px;
+  opacity: 0;
+  pointer-events: none; 
+}
+
+.heart-trigger:checked ~ .img-wrapper .heart-emoji {
+  animation: heart-pop 0.5s ease-out forwards;
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-40%, -100%) scale(1.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -150%) scale(1);
+    opacity: 0;
+  }
+}
