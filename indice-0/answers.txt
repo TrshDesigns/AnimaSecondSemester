@@ -1,0 +1,4 @@
+Que devuelve un componente? = Devuelve un jsx de la representacion de esa seccion del dom 
+Porque usamos return ? = Indica a react el resultado final del componente luego de procesar sus datos sean props o states
+Que es un componente ? = Un componente es una seccion de codigo que puede procesar informacion y recibir informacion de un componente padre (tener todo el dinamismo de javascript) estos componentes luego son utilizados en otro componentes que son renderizados como html 
+Separar en archivos permite poder tener una mejor organizacion en carpetas de lo que estamos haciendo haciendo que nuestra aplicacion sea mas modular y facil de mantener o identificar fallos 
